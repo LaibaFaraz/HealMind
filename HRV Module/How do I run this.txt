@@ -105,9 +105,9 @@ const firebaseConfig = {
 ## How It Works
 ```
 1. Smartwatch collects heart rate → sends to Firebase
-2. Colab reads the data (every 30 mins)
+2. Colab reads the data (every 30 mins) // edit the code to change frequency 
 3. Calculates HRV metrics (SDNN, RMSSD)
-4. XGBoost model predicts: Low Stress or High Stress
+4. XGBoost model predicts Stress
 5. Results saved to Firebase
 6. Dashboard fetches & displays in real-time
 ```
@@ -117,7 +117,7 @@ const firebaseConfig = {
 **"No data in dashboard"**
 - Check Firestore Console - is data arriving?
 - Make sure Colab is still running
-- Wait 30+ minutes for first prediction
+- Wait 30+ minutes for first prediction // or you can change the frequncy of predictions by editing the code
 
 **"Firebase auth error"**
 - Check your API key in config
@@ -158,4 +158,4 @@ Once everything is running:
 
 ---
 
-**That's it! You now have a complete stress monitoring system running 24/7.** 🎉
+That's it! 🎉
