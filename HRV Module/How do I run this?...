@@ -1,0 +1,161 @@
+# HealMind - Complete Setup Guide
+
+A stress detection system that monitors heart rate data from your smartwatch and predicts stress levels in real-time.
+
+## What You Need
+
+- **Hardware:** Android smartwatch with heart rate sensor (Samsung Galaxy Watch recommended)
+- **Software:** 
+  - Android Studio (for mobile app)
+  - Python 3.10+ (for ML model)
+  - Google account (for Firebase & Colab)
+  - Any web browser (for dashboard)
+
+## Step-by-Step Installation
+
+### Step 1: Set Up Firebase
+
+1. Go to https://firebase.google.com
+2. Click "Get Started" → Create new project
+3. Name it "HealMind" (or whatever you want)
+4. Enable Firestore Database (select your region)
+5. Go to Project Settings → Service Accounts
+6. Click "Generate New Private Key" → JSON file downloads
+7. **Save this file safely** - you'll need it later
+8. **Add to `.gitignore`** if using Git - don't upload to GitHub!
+
+### Step 2: Deploy Wear OS App
+
+1. Download this repo: `git clone https://github.com/LaibaFaraz/HealMind.git`
+2. Open Android Studio
+3. Open folder: `HealMind/HRV-Module/Mobile-Client/`
+4. Update Firebase config in the app (Project Settings → google-services.json)
+5. Connect your smartwatch via USB
+6. Click "Run" to install app
+7. **App will now send heart rate data to Firebase every few seconds**
+
+### Step 3: Train ML Model (One-Time Setup)
+
+**Option A: On Your Computer**
+
+1. Install Python 3.10+
+2. Download your Samsung Health data (via Samsung Health app → export)
+3. Extract HR and HRV data as JSON files
+4. Open terminal/command prompt
+5. Run:
+```bash
+cd HealMind/HRV-Module/XGBoost
+pip install pandas numpy xgboost scikit-learn
+python samsung_hrv_stress_pipeline.py
+```
+6. This creates:
+   - `stress_model.pkl` (your trained model)
+   - `scaler.pkl` (data preprocessor)
+
+**Option B: Skip Training (Use Pre-trained Model)**
+- Just download the provided `stress_model.pkl` and `scaler.pkl`
+- No historical data needed
+
+### Step 4: Set Up Batch Processor (Cloud)
+
+This runs predictions automatically every 30 minutes.
+
+1. Go to https://colab.research.google.com
+2. Click "New Notebook"
+3. Copy code from `Colab-Batch-Processor/batch_predictor.py`
+4. Paste into Colab
+5. **Cell 1:** Install packages
+```python
+   !pip install firebase-admin xgboost scikit-learn pandas numpy joblib schedule
+```
+6. **Cell 2:** Upload Firebase key
+   - Click "Upload files"
+   - Select your JSON service account key
+7. **Cell 3:** Load model
+   - Upload `stress_model.pkl` and `scaler.pkl`
+8. **Cell 4+:** Run the batch processor
+9. **Keep Colab tab open** - it will run continuously
+10. Check Firebase Console to see predictions appearing in `stress_predictions` collection
+
+### Step 5: Deploy Web Dashboard
+
+**Local (on your computer):**
+
+1. Open file: `HealMind/Web-Dashboard/index.html`
+2. Edit the Firebase config (lines 8-17):
+```javascript
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "your-project.firebaseapp.com",
+    projectId: "your-project-id",
+    // ... rest of config from Firebase Console
+};
+```
+3. Save file
+4. Open in web browser → **Done!**
+
+**Online (GitHub Pages):**
+
+1. Push code to GitHub
+2. Go to repo Settings → Pages
+3. Select "Deploy from a branch"
+4. Choose `main` branch
+5. Save → Your dashboard is live!
+
+## How It Works
+```
+1. Smartwatch collects heart rate → sends to Firebase
+2. Colab reads the data (every 30 mins)
+3. Calculates HRV metrics (SDNN, RMSSD)
+4. XGBoost model predicts: Low Stress or High Stress
+5. Results saved to Firebase
+6. Dashboard fetches & displays in real-time
+```
+
+## Troubleshooting
+
+**"No data in dashboard"**
+- Check Firestore Console - is data arriving?
+- Make sure Colab is still running
+- Wait 30+ minutes for first prediction
+
+**"Firebase auth error"**
+- Check your API key in config
+- Make sure Firestore rules allow reads/writes
+
+**"Model not loading"**
+- Download model files to same folder as script
+- Check file names match exactly
+
+**"Smartwatch not sending data"**
+- Make sure app has permissions
+- Check internet connection
+- Restart app
+
+## File Locations to Know
+
+| What | Where |
+|------|-------|
+| Wear OS app | `HRV-Module/Mobile-Client/` |
+| ML model | `HRV-Module/XGBoost/stress_model.pkl` |
+| Batch processor | `Colab-Batch-Processor/batch_predictor.py` |
+| Web dashboard | `Web-Dashboard/index.html` |
+| Firebase key | Root folder (keep private!) |
+
+## Next Steps
+
+Once everything is running:
+1. Wear the smartwatch for 2-3 days to collect data
+2. Let Colab make predictions (30-min intervals)
+3. Check dashboard for stress trends
+4. Fine-tune model with your personal data
+
+## Getting Help
+
+- Check GitHub Issues for common problems
+- Review Firebase documentation
+- Read Colab error messages carefully
+
+---
+
+**That's it! You now have a complete stress monitoring system running 24/7.** 🎉
