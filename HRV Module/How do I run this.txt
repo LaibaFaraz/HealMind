@@ -8,7 +8,7 @@ A stress detection system that monitors heart rate data from your smartwatch and
 - **Software:** 
   - Android Studio (for mobile app)
   - Python 3.10+ (for ML model)
-  - Google account (for Firebase & Colab)
+  - Google account (for Firebase & Colab) // or you can use Colab_localver and run on local device
   - Any web browser (for dashboard)
 
 ## Step-by-Step Installation
