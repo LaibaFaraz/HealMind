@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMind | Stress Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- container for centering -->
+    <div class="MainContainer">
+        <!-- header and title -->
+        <header class="HeaderArea">
+            <h1 class="MainTitle TextGradient">HEALMIND INTELLIGENCE</h1>
+            <p class="SubTitleText">Real-time Bio-metric Stress Analysis & Trends</p>
+        </header>
+
+        <!-- Top Metrics Grid -->
+        <div class="MetricsGrid">
+            <!-- Current Status -->
+            <div class="GlassPanel">
+                <p class="MetricLabel">Current Status</p>
+                <div class="FlexCenterBetween">
+                    <span id="status-label" class="StatusLarge">Waiting...</span>
+                </div>
+                <p id="time-subtext" class="MetricSubtext">Initializing live feed...</p>
+            </div>
+
+            <!-- Stress Probability -->
+            <div class="GlassPanel">
+                <p class="MetricLabel">Stress Probability</p>
+                <div class="FlexCenterBetween">
+                    <span id="prob-value" class="ValueXLarge">0%</span>
+                    <span id="prob-status" class="BadgeBase">CALIBRATING</span>
+                </div>
+                <p class="MetricSubtext SubTitleText">Confidence level of AI model</p>
+            </div>
+
+            <!-- Daily Average -->
+            <div class="GlassPanel">
+                <p class="MetricLabel">Peak Stress</p>
+                <div class="FlexCenterBetween">
+                    <span id="avg-value" class="ValueXLarge">0%</span>
+                    <span class="BadgeBase BadgeSuccess">NORMAL</span>
+                </div>
+                <p class="MetricSubtext">Highest recorded today</p>
+            </div>
+        </div>
+
+        <!-- Smart Advice Panel -->
+        <div class="GlassPanel LargeMarginBottom">
+            <h3 class="MetricLabel BlueText">Smart Analysis & Advice</h3>
+            <p id="advice-text" class="AdviceText">Collecting data to generate insights...</p>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="ChartsGrid">
+            <div class="ColSpan2 GlassPanel">
+                <h3 class="MetricLabel">Stress History Timeline (24H)</h3>
+                <div class="ChartContainer">
+                    <canvas id="historyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="GlassPanel">
+                <h3 class="MetricLabel">Weekly Comparison</h3>
+                <div class="ChartContainer">
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase & Logic Shim -->
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

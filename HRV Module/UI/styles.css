@@ -1,0 +1,198 @@
+/* --- MY DASHBOARD STYLES --- */
+/* Inter font from Google Fonts */
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* mesh gradient from online */
+    background:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-color: #0f172a;
+    /* Fallback */
+    color: #f8fafc;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* responsivity on phones */
+@media (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+}
+
+.MainContainer {
+    max-width: 72rem;
+    margin: 0 auto;
+    /* Center the whole thing */
+}
+
+/* header part */
+.HeaderArea {
+    margin-bottom: 2rem;
+}
+
+.MainTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+    .MainTitle {
+        font-size: 2.25rem;
+    }
+}
+
+.SubTitleText {
+    color: #94a3b8;
+    margin-top: 5px;
+    /* Small gap */
+}
+
+/* grid for 3 boxes at top */
+.MetricsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .MetricsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* glass effect boxes */
+.GlassPanel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/* Glowing text title */
+.TextGradient {
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.MetricLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* helper for layout */
+.FlexCenterBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.StatusLarge {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.ValueXLarge {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.MetricSubtext {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 15px;
+}
+
+/* Tags/Badges colors */
+.BadgeBase {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.BadgeSuccess {
+    background: rgba(74, 222, 128, 0.2);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+}
+
+.BadgeWarning {
+    background: rgba(250, 204, 21, 0.2);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    color: #facc15;
+}
+
+.BadgeDanger {
+    background: rgba(248, 113, 113, 0.2);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: #f87171;
+}
+
+/* Simple text colors */
+.SuccessText {
+    color: #4ade80;
+}
+
+.WarningText {
+    color: #facc15;
+}
+
+.DangerText {
+    color: #f87171;
+}
+
+.AdviceText {
+    font-size: 18px;
+    color: #e2e8f0;
+}
+
+/* Layout for the graphs */
+.ChartsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .ChartsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ColSpan2 {
+        grid-column: span 2;
+    }
+}
+
+.ChartContainer {
+    height: 250px;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .ChartContainer {
+        height: 320px;
+    }
+}
+
+.BlueText {
+    color: #60a5fa;
+}
+
+.LargeMarginBottom {
+    margin-bottom: 2rem;
+}

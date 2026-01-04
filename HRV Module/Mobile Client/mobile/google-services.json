@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "815736974240",
+    "project_id": "healmind-2025",
+    "storage_bucket": "healmind-2025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815736974240:android:a468c6713f2477691612c5",
+        "android_client_info": {
+          "package_name": "com.example.hrvig"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeLdU02NRx-pON2kldAxqNPqVQ0c3w37I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815736974240:android:8786b57c4eb325941612c5",
+        "android_client_info": {
+          "package_name": "com.samsung.health.hrdatatransfer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeLdU02NRx-pON2kldAxqNPqVQ0c3w37I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
