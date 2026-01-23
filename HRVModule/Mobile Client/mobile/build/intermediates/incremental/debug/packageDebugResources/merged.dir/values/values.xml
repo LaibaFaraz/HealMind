@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="android_wear_capabilities">
+        <item>wear</item>
+    </string-array>
+    <string name="app_name">HRDataTransfer</string>
+    <string name="gcm_defaultSenderId" translatable="false">815736974240</string>
+    <string name="google_api_key" translatable="false">AIzaSyBeLdU02NRx-pON2kldAxqNPqVQ0c3w37I</string>
+    <string name="google_app_id" translatable="false">1:815736974240:android:8786b57c4eb325941612c5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBeLdU02NRx-pON2kldAxqNPqVQ0c3w37I</string>
+    <string name="google_storage_bucket" translatable="false">healmind-2025.firebasestorage.app</string>
+    <string name="hr_name">HR</string>
+    <string name="hr_unit">bpm</string>
+    <string name="ibi_name">IBI</string>
+    <string name="ibi_unit">ms</string>
+    <string name="project_id" translatable="false">healmind-2025</string>
+</resources>

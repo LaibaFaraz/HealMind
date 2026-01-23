@@ -1,0 +1,53 @@
+com.samsung.health.mobile-lifecycle-livedata-core-2.8.3-0 C:\Users\laiba\.gradle\caches\8.13\transforms\0554367e24c4382bda62d7652b2de98d\transformed\lifecycle-livedata-core-2.8.3\res
+com.samsung.health.mobile-material-icons-core-release-1 C:\Users\laiba\.gradle\caches\8.13\transforms\09119bef276f269ea044d9c80b25b4d7\transformed\material-icons-core-release\res
+com.samsung.health.mobile-core-viewtree-1.0.0-2 C:\Users\laiba\.gradle\caches\8.13\transforms\0b112c0313b1dbab487d6099a7e95eeb\transformed\core-viewtree-1.0.0\res
+com.samsung.health.mobile-material3-release-3 C:\Users\laiba\.gradle\caches\8.13\transforms\16eb442b768fe15589885e9fb3d90a60\transformed\material3-release\res
+com.samsung.health.mobile-tracing-1.2.0-4 C:\Users\laiba\.gradle\caches\8.13\transforms\1bcf4a38f1494564d7d7c8540f04ace5\transformed\tracing-1.2.0\res
+com.samsung.health.mobile-firebase-common-21.0.0-5 C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\res
+com.samsung.health.mobile-savedstate-ktx-1.2.1-6 C:\Users\laiba\.gradle\caches\8.13\transforms\27652a7f48c5da32b48797179f23010b\transformed\savedstate-ktx-1.2.1\res
+com.samsung.health.mobile-ui-util-release-7 C:\Users\laiba\.gradle\caches\8.13\transforms\2b935be012c897909699005b00129081\transformed\ui-util-release\res
+com.samsung.health.mobile-lifecycle-viewmodel-release-8 C:\Users\laiba\.gradle\caches\8.13\transforms\2fc07c4f4ac39c393782f519ebe88c97\transformed\lifecycle-viewmodel-release\res
+com.samsung.health.mobile-activity-1.10.1-9 C:\Users\laiba\.gradle\caches\8.13\transforms\3d09d3c011c497ac100ae476bc8dc71a\transformed\activity-1.10.1\res
+com.samsung.health.mobile-activity-ktx-1.10.1-10 C:\Users\laiba\.gradle\caches\8.13\transforms\46147b31f7f603dce1a86c96b15214e1\transformed\activity-ktx-1.10.1\res
+com.samsung.health.mobile-activity-compose-1.10.1-11 C:\Users\laiba\.gradle\caches\8.13\transforms\486586eaba7f41c0e3a72a85c0da3a1c\transformed\activity-compose-1.10.1\res
+com.samsung.health.mobile-foundation-layout-release-12 C:\Users\laiba\.gradle\caches\8.13\transforms\49fab4409299de2e7d3fdb45ae5f2854\transformed\foundation-layout-release\res
+com.samsung.health.mobile-runtime-saveable-release-13 C:\Users\laiba\.gradle\caches\8.13\transforms\555615a25474f9436c5eec75c8799c69\transformed\runtime-saveable-release\res
+com.samsung.health.mobile-lifecycle-runtime-release-14 C:\Users\laiba\.gradle\caches\8.13\transforms\5b9d1ebe6ef900df4b33579dc861e6ec\transformed\lifecycle-runtime-release\res
+com.samsung.health.mobile-customview-poolingcontainer-1.0.0-15 C:\Users\laiba\.gradle\caches\8.13\transforms\5fe47293ebff00f0bfc42d48e02f366a\transformed\customview-poolingcontainer-1.0.0\res
+com.samsung.health.mobile-ui-geometry-release-16 C:\Users\laiba\.gradle\caches\8.13\transforms\628491cb8827e080918fbe8e5f5ffdc4\transformed\ui-geometry-release\res
+com.samsung.health.mobile-fragment-1.5.1-17 C:\Users\laiba\.gradle\caches\8.13\transforms\6a1fd6a36f81df4d8a9b081c04149e31\transformed\fragment-1.5.1\res
+com.samsung.health.mobile-lifecycle-viewmodel-ktx-2.8.3-18 C:\Users\laiba\.gradle\caches\8.13\transforms\6e7d91f3ea30275acc4041b6a95a704d\transformed\lifecycle-viewmodel-ktx-2.8.3\res
+com.samsung.health.mobile-runtime-release-19 C:\Users\laiba\.gradle\caches\8.13\transforms\6f1a3c3b4486e70ef6412c339d4ff970\transformed\runtime-release\res
+com.samsung.health.mobile-lifecycle-process-2.8.3-20 C:\Users\laiba\.gradle\caches\8.13\transforms\752d64e0d6a794f0c49f9253dcb935e1\transformed\lifecycle-process-2.8.3\res
+com.samsung.health.mobile-ui-graphics-release-21 C:\Users\laiba\.gradle\caches\8.13\transforms\7e2a0206ff08d961b2427dde8c369df7\transformed\ui-graphics-release\res
+com.samsung.health.mobile-ui-text-release-22 C:\Users\laiba\.gradle\caches\8.13\transforms\84a6421bedde799f373da166ebc7ab1b\transformed\ui-text-release\res
+com.samsung.health.mobile-lifecycle-livedata-2.8.3-23 C:\Users\laiba\.gradle\caches\8.13\transforms\86e0b2b139f67eae2cc7825c02cb1b51\transformed\lifecycle-livedata-2.8.3\res
+com.samsung.health.mobile-play-services-base-18.5.0-24 C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\res
+com.samsung.health.mobile-lifecycle-runtime-compose-release-25 C:\Users\laiba\.gradle\caches\8.13\transforms\92377f3b7261230d7c6c9b914963f8ff\transformed\lifecycle-runtime-compose-release\res
+com.samsung.health.mobile-profileinstaller-1.4.0-26 C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\res
+com.samsung.health.mobile-animation-release-27 C:\Users\laiba\.gradle\caches\8.13\transforms\95fb9ceb1f5bf4ded6f9130f9d281ea9\transformed\animation-release\res
+com.samsung.health.mobile-emoji2-1.3.0-28 C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\res
+com.samsung.health.mobile-annotation-experimental-1.4.1-29 C:\Users\laiba\.gradle\caches\8.13\transforms\9d4d710fcae1e807439b79c374cf2d73\transformed\annotation-experimental-1.4.1\res
+com.samsung.health.mobile-lifecycle-runtime-ktx-release-30 C:\Users\laiba\.gradle\caches\8.13\transforms\9fee3cd1cf9b5f29d43913effa5ce5e1\transformed\lifecycle-runtime-ktx-release\res
+com.samsung.health.mobile-graphics-path-1.0.1-31 C:\Users\laiba\.gradle\caches\8.13\transforms\a0a86d75d1034725d8aded5ff4890168\transformed\graphics-path-1.0.1\res
+com.samsung.health.mobile-ui-release-32 C:\Users\laiba\.gradle\caches\8.13\transforms\a51c165f973080cee2d9140d4562e203\transformed\ui-release\res
+com.samsung.health.mobile-core-1.16.0-33 C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\res
+com.samsung.health.mobile-lifecycle-viewmodel-savedstate-2.8.3-34 C:\Users\laiba\.gradle\caches\8.13\transforms\ab81c7c9fa03ee1a9a3b3bd54c9ae3ba\transformed\lifecycle-viewmodel-savedstate-2.8.3\res
+com.samsung.health.mobile-material-ripple-release-35 C:\Users\laiba\.gradle\caches\8.13\transforms\b27ecdeacd183859f1d3fc70035eca3b\transformed\material-ripple-release\res
+com.samsung.health.mobile-ui-unit-release-36 C:\Users\laiba\.gradle\caches\8.13\transforms\b7b807e85365706b19e45792e32016e2\transformed\ui-unit-release\res
+com.samsung.health.mobile-core-runtime-2.2.0-37 C:\Users\laiba\.gradle\caches\8.13\transforms\c0836026d3a839509789612bc50c5834\transformed\core-runtime-2.2.0\res
+com.samsung.health.mobile-core-ktx-1.16.0-38 C:\Users\laiba\.gradle\caches\8.13\transforms\cbcf21743ff14df533253ab7c3c55904\transformed\core-ktx-1.16.0\res
+com.samsung.health.mobile-startup-runtime-1.1.1-39 C:\Users\laiba\.gradle\caches\8.13\transforms\d669e326ee3586bb82f8f4558f943f41\transformed\startup-runtime-1.1.1\res
+com.samsung.health.mobile-lifecycle-livedata-core-ktx-2.8.3-40 C:\Users\laiba\.gradle\caches\8.13\transforms\d74c1d5166fdab1607bec399ed062bae\transformed\lifecycle-livedata-core-ktx-2.8.3\res
+com.samsung.health.mobile-foundation-release-41 C:\Users\laiba\.gradle\caches\8.13\transforms\e7a5a9eb5fce043c2a31d164cc6e714e\transformed\foundation-release\res
+com.samsung.health.mobile-play-services-basement-18.4.0-42 C:\Users\laiba\.gradle\caches\8.13\transforms\f16910d846687c282e938940b078f77e\transformed\play-services-basement-18.4.0\res
+com.samsung.health.mobile-savedstate-1.2.1-43 C:\Users\laiba\.gradle\caches\8.13\transforms\f291c45912858d39c9ed5582703d7aff\transformed\savedstate-1.2.1\res
+com.samsung.health.mobile-animation-core-release-44 C:\Users\laiba\.gradle\caches\8.13\transforms\fb619bf6b9120a0b0f80fdacfb23b215\transformed\animation-core-release\res
+com.samsung.health.mobile-pngs-45 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\generated\res\pngs\debug
+com.samsung.health.mobile-res-46 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\generated\res\processDebugGoogleServices
+com.samsung.health.mobile-resValues-47 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\generated\res\resValues\debug
+com.samsung.health.mobile-packageDebugResources-48 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.samsung.health.mobile-packageDebugResources-49 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.samsung.health.mobile-debug-50 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\build\intermediates\merged_res\debug\mergeDebugResources
+com.samsung.health.mobile-debug-51 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\debug\res
+com.samsung.health.mobile-main-52 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\res

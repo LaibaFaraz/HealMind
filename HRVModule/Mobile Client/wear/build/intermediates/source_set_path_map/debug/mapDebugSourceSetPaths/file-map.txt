@@ -1,0 +1,62 @@
+com.samsung.health.hrdatatransfer.wear-core-viewtree-1.0.0-0 C:\Users\laiba\.gradle\caches\8.13\transforms\0b112c0313b1dbab487d6099a7e95eeb\transformed\core-viewtree-1.0.0\res
+com.samsung.health.hrdatatransfer.wear-transition-1.5.0-1 C:\Users\laiba\.gradle\caches\8.13\transforms\1113d94fbd83ae745250466531e4d1fc\transformed\transition-1.5.0\res
+com.samsung.health.hrdatatransfer.wear-tracing-1.2.0-2 C:\Users\laiba\.gradle\caches\8.13\transforms\1bcf4a38f1494564d7d7c8540f04ace5\transformed\tracing-1.2.0\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-runtime-compose-release-3 C:\Users\laiba\.gradle\caches\8.13\transforms\24b41605c8bcc7f61f0b98d819f26e24\transformed\lifecycle-runtime-compose-release\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-livedata-2.9.1-4 C:\Users\laiba\.gradle\caches\8.13\transforms\3719982937c76ec8c0173b5ad72f546a\transformed\lifecycle-livedata-2.9.1\res
+com.samsung.health.hrdatatransfer.wear-activity-1.10.1-5 C:\Users\laiba\.gradle\caches\8.13\transforms\3d09d3c011c497ac100ae476bc8dc71a\transformed\activity-1.10.1\res
+com.samsung.health.hrdatatransfer.wear-foundation-layout-release-6 C:\Users\laiba\.gradle\caches\8.13\transforms\43fb19a6ea63bf80d7c7557471dc7968\transformed\foundation-layout-release\res
+com.samsung.health.hrdatatransfer.wear-activity-ktx-1.10.1-7 C:\Users\laiba\.gradle\caches\8.13\transforms\46147b31f7f603dce1a86c96b15214e1\transformed\activity-ktx-1.10.1\res
+com.samsung.health.hrdatatransfer.wear-ui-text-release-8 C:\Users\laiba\.gradle\caches\8.13\transforms\47485f3c0b47eb5ef89a59d49ad3aaa7\transformed\ui-text-release\res
+com.samsung.health.hrdatatransfer.wear-activity-compose-1.10.1-9 C:\Users\laiba\.gradle\caches\8.13\transforms\486586eaba7f41c0e3a72a85c0da3a1c\transformed\activity-compose-1.10.1\res
+com.samsung.health.hrdatatransfer.wear-appcompat-resources-1.6.1-10 C:\Users\laiba\.gradle\caches\8.13\transforms\4e8b5a22da6d1d881d3b6eb4d7ad537a\transformed\appcompat-resources-1.6.1\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-process-2.9.1-11 C:\Users\laiba\.gradle\caches\8.13\transforms\5251be92a1993c6dee5ea7f40c708957\transformed\lifecycle-process-2.9.1\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-runtime-release-12 C:\Users\laiba\.gradle\caches\8.13\transforms\5613151395cea78d92308ec419e577db\transformed\lifecycle-runtime-release\res
+com.samsung.health.hrdatatransfer.wear-ui-util-release-13 C:\Users\laiba\.gradle\caches\8.13\transforms\584d24d9b0f5139da601a7e092957369\transformed\ui-util-release\res
+com.samsung.health.hrdatatransfer.wear-customview-poolingcontainer-1.0.0-14 C:\Users\laiba\.gradle\caches\8.13\transforms\5fe47293ebff00f0bfc42d48e02f366a\transformed\customview-poolingcontainer-1.0.0\res
+com.samsung.health.hrdatatransfer.wear-coordinatorlayout-1.1.0-15 C:\Users\laiba\.gradle\caches\8.13\transforms\6370d9877aaea198e348416c4f85aea8\transformed\coordinatorlayout-1.1.0\res
+com.samsung.health.hrdatatransfer.wear-material-ripple-release-16 C:\Users\laiba\.gradle\caches\8.13\transforms\6383394f2c658f60a86d2ef68064e9f1\transformed\material-ripple-release\res
+com.samsung.health.hrdatatransfer.wear-fragment-1.5.1-17 C:\Users\laiba\.gradle\caches\8.13\transforms\6a1fd6a36f81df4d8a9b081c04149e31\transformed\fragment-1.5.1\res
+com.samsung.health.hrdatatransfer.wear-drawerlayout-1.1.1-18 C:\Users\laiba\.gradle\caches\8.13\transforms\6f6ee8a99a95b30434e321683088f1e2\transformed\drawerlayout-1.1.1\res
+com.samsung.health.hrdatatransfer.wear-constraintlayout-2.0.1-19 C:\Users\laiba\.gradle\caches\8.13\transforms\760b249603ad7d8927c4ee860ace7fcc\transformed\constraintlayout-2.0.1\res
+com.samsung.health.hrdatatransfer.wear-material-icons-core-release-20 C:\Users\laiba\.gradle\caches\8.13\transforms\860b819499dfce749331ea68b2d39ca1\transformed\material-icons-core-release\res
+com.samsung.health.hrdatatransfer.wear-compose-material-1.4.1-21 C:\Users\laiba\.gradle\caches\8.13\transforms\8765ff9118738dea161be66a62b3ae93\transformed\compose-material-1.4.1\res
+com.samsung.health.hrdatatransfer.wear-play-services-base-18.5.0-22 C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-viewmodel-release-23 C:\Users\laiba\.gradle\caches\8.13\transforms\9127e44d3a0f7543e54731adccd9b8e1\transformed\lifecycle-viewmodel-release\res
+com.samsung.health.hrdatatransfer.wear-foundation-release-24 C:\Users\laiba\.gradle\caches\8.13\transforms\9336d552198851a4d5f1cc3e07f7935e\transformed\foundation-release\res
+com.samsung.health.hrdatatransfer.wear-profileinstaller-1.4.0-25 C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\res
+com.samsung.health.hrdatatransfer.wear-recyclerview-1.1.0-26 C:\Users\laiba\.gradle\caches\8.13\transforms\9a4a4e8774ed7d28d876b54f35f428be\transformed\recyclerview-1.1.0\res
+com.samsung.health.hrdatatransfer.wear-annotation-experimental-1.4.1-27 C:\Users\laiba\.gradle\caches\8.13\transforms\9d4d710fcae1e807439b79c374cf2d73\transformed\annotation-experimental-1.4.1\res
+com.samsung.health.hrdatatransfer.wear-emoji2-1.4.0-28 C:\Users\laiba\.gradle\caches\8.13\transforms\9db9d669407e53a7fd4a753d33d29e3a\transformed\emoji2-1.4.0\res
+com.samsung.health.hrdatatransfer.wear-viewpager2-1.0.0-29 C:\Users\laiba\.gradle\caches\8.13\transforms\a015399ccca5b7389d47eeceeae68e54\transformed\viewpager2-1.0.0\res
+com.samsung.health.hrdatatransfer.wear-graphics-path-1.0.1-30 C:\Users\laiba\.gradle\caches\8.13\transforms\a0a86d75d1034725d8aded5ff4890168\transformed\graphics-path-1.0.1\res
+com.samsung.health.hrdatatransfer.wear-compose-material-core-1.4.1-31 C:\Users\laiba\.gradle\caches\8.13\transforms\a512ceca7af744d9b400a083d85243a8\transformed\compose-material-core-1.4.1\res
+com.samsung.health.hrdatatransfer.wear-core-1.16.0-32 C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-livedata-core-2.9.1-33 C:\Users\laiba\.gradle\caches\8.13\transforms\aa748cfbbc3568ee2303e3f7dd15440f\transformed\lifecycle-livedata-core-2.9.1\res
+com.samsung.health.hrdatatransfer.wear-animation-core-release-34 C:\Users\laiba\.gradle\caches\8.13\transforms\b84406ef847201a0f33ea5bc95b80ead\transformed\animation-core-release\res
+com.samsung.health.hrdatatransfer.wear-emoji2-views-helper-1.4.0-35 C:\Users\laiba\.gradle\caches\8.13\transforms\bc689929d42dd4070602bd69bc703b4b\transformed\emoji2-views-helper-1.4.0\res
+com.samsung.health.hrdatatransfer.wear-core-runtime-2.2.0-36 C:\Users\laiba\.gradle\caches\8.13\transforms\c0836026d3a839509789612bc50c5834\transformed\core-runtime-2.2.0\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-livedata-core-ktx-2.9.1-37 C:\Users\laiba\.gradle\caches\8.13\transforms\c9dd5b67ee73f07027c782a2ca1457cb\transformed\lifecycle-livedata-core-ktx-2.9.1\res
+com.samsung.health.hrdatatransfer.wear-core-ktx-1.16.0-38 C:\Users\laiba\.gradle\caches\8.13\transforms\cbcf21743ff14df533253ab7c3c55904\transformed\core-ktx-1.16.0\res
+com.samsung.health.hrdatatransfer.wear-savedstate-release-39 C:\Users\laiba\.gradle\caches\8.13\transforms\ce38938d57d4e73635a8c670e295d20e\transformed\savedstate-release\res
+com.samsung.health.hrdatatransfer.wear-runtime-release-40 C:\Users\laiba\.gradle\caches\8.13\transforms\d3a853d05f930b7d1116358535cf2643\transformed\runtime-release\res
+com.samsung.health.hrdatatransfer.wear-animation-release-41 C:\Users\laiba\.gradle\caches\8.13\transforms\d4ae1b6c573291ee9ead2718112a8479\transformed\animation-release\res
+com.samsung.health.hrdatatransfer.wear-startup-runtime-1.1.1-42 C:\Users\laiba\.gradle\caches\8.13\transforms\d669e326ee3586bb82f8f4558f943f41\transformed\startup-runtime-1.1.1\res
+com.samsung.health.hrdatatransfer.wear-runtime-saveable-release-43 C:\Users\laiba\.gradle\caches\8.13\transforms\d7559bfb6e8c5fb664dda56e65e3f5c1\transformed\runtime-saveable-release\res
+com.samsung.health.hrdatatransfer.wear-ui-unit-release-44 C:\Users\laiba\.gradle\caches\8.13\transforms\dd453b864a60bb035873805f9a411d07\transformed\ui-unit-release\res
+com.samsung.health.hrdatatransfer.wear-compose-foundation-1.4.1-45 C:\Users\laiba\.gradle\caches\8.13\transforms\ddfc3f35e08a0dc25c23b4c35b1ee4ff\transformed\compose-foundation-1.4.1\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-viewmodel-ktx-2.9.1-46 C:\Users\laiba\.gradle\caches\8.13\transforms\e08fcaaff77f3bba503a75442b8af4ef\transformed\lifecycle-viewmodel-ktx-2.9.1\res
+com.samsung.health.hrdatatransfer.wear-savedstate-ktx-1.3.0-47 C:\Users\laiba\.gradle\caches\8.13\transforms\e3d1af7fe2e5a18ec0d918139cadf405\transformed\savedstate-ktx-1.3.0\res
+com.samsung.health.hrdatatransfer.wear-lifecycle-viewmodel-savedstate-release-48 C:\Users\laiba\.gradle\caches\8.13\transforms\e5bc7be265385234ecaa3ecf3c4b4648\transformed\lifecycle-viewmodel-savedstate-release\res
+com.samsung.health.hrdatatransfer.wear-ui-release-49 C:\Users\laiba\.gradle\caches\8.13\transforms\ef08a481b622cd1ffad094f7cc7cbe31\transformed\ui-release\res
+com.samsung.health.hrdatatransfer.wear-appcompat-1.6.1-50 C:\Users\laiba\.gradle\caches\8.13\transforms\f02d192ba2705e60ca5d1bc47a66b4eb\transformed\appcompat-1.6.1\res
+com.samsung.health.hrdatatransfer.wear-play-services-basement-18.4.0-51 C:\Users\laiba\.gradle\caches\8.13\transforms\f16910d846687c282e938940b078f77e\transformed\play-services-basement-18.4.0\res
+com.samsung.health.hrdatatransfer.wear-ui-graphics-release-52 C:\Users\laiba\.gradle\caches\8.13\transforms\f8d0abc5f443d4efb6a7c87e6fe30f97\transformed\ui-graphics-release\res
+com.samsung.health.hrdatatransfer.wear-material-1.12.0-53 C:\Users\laiba\.gradle\caches\8.13\transforms\f9ba47403fdd074775a09aa4cd87c78e\transformed\material-1.12.0\res
+com.samsung.health.hrdatatransfer.wear-cardview-1.0.0-54 C:\Users\laiba\.gradle\caches\8.13\transforms\fed97786ff9fe3195adf01909a15081d\transformed\cardview-1.0.0\res
+com.samsung.health.hrdatatransfer.wear-ui-geometry-release-55 C:\Users\laiba\.gradle\caches\8.13\transforms\ffe238da2d95671124c317d40a141a6e\transformed\ui-geometry-release\res
+com.samsung.health.hrdatatransfer.wear-resValues-56 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\build\generated\res\resValues\debug
+com.samsung.health.hrdatatransfer.wear-packageDebugResources-57 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.samsung.health.hrdatatransfer.wear-packageDebugResources-58 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.samsung.health.hrdatatransfer.wear-debug-59 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\build\intermediates\merged_res\debug\mergeDebugResources
+com.samsung.health.hrdatatransfer.wear-debug-60 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\src\debug\res
+com.samsung.health.hrdatatransfer.wear-main-61 D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\wear\src\main\res

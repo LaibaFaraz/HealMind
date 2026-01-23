@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Firestore Data</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        .container {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #f87171;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background: #7f1d1d;
+            border: 2px solid #f87171;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #94a3b8;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            margin-right: 10px;
+        }
+        .danger {
+            background: #dc2626;
+            color: white;
+        }
+        .danger:hover {
+            background: #b91c1c;
+        }
+        .secondary {
+            background: #475569;
+            color: white;
+        }
+        .secondary:hover {
+            background: #334155;
+        }
+        #output {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        .success {
+            color: #4ade80;
+        }
+        .info {
+            color: #60a5fa;
+        }
+        .error {
+            color: #f87171;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ Delete Firestore Data</h1>
+        
+        <div class="warning">
+            <strong>WARNING:</strong> This will permanently delete data from your Firestore database. This action cannot be undone!
+        </div>
+        
+        <div class="controls">
+            <label>Delete Option:</label>
+            <select id="deleteOption">
+                <option value="recent">Delete recent data (last 24 hours)</option>
+                <option value="all">Delete ALL stress predictions</option>
+                <option value="date">Delete data from specific date range</option>
+            </select>
+            
+            <div id="dateInputs" style="display: none;">
+                <label>From Date:</label>
+                <input type="datetime-local" id="fromDate">
+                
+                <label>To Date:</label>
+                <input type="datetime-local" id="toDate">
+            </div>
+        </div>
+        
+        <button class="secondary" onclick="previewDelete()">Preview (Count Documents)</button>
+        <button class="danger" onclick="confirmDelete()">DELETE DATA</button>
+        
+        <div id="output"></div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs, deleteDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyALG5rqXdMdJLVY3Sm9An4pmCCoflYUn7g",
+            authDomain: "healmind-2025.firebaseapp.com",
+            projectId: "healmind-2025",
+            storageBucket: "healmind-2025.firebasestorage.app",
+            messagingSenderId: "815736974240",
+            appId: "1:815736974240:web:46d83a46fae313961612c5",
+            measurementId: "G-Q113X0VYS2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById('deleteOption').addEventListener('change', function() {
+            const dateInputs = document.getElementById('dateInputs');
+            if (this.value === 'date') {
+                dateInputs.style.display = 'block';
+            } else {
+                dateInputs.style.display = 'none';
+            }
+        });
+
+        function getQuery() {
+            const option = document.getElementById('deleteOption').value;
+            
+            if (option === 'recent') {
+                const yesterday = new Date();
+                yesterday.setHours(yesterday.getHours() - 24);
+                return query(
+                    collection(db, "stress_predictions"),
+                    where("prediction_timestamp", ">=", Timestamp.fromDate(yesterday))
+                );
+            } else if (option === 'date') {
+                const fromDate = new Date(document.getElementById('fromDate').value);
+                const toDate = new Date(document.getElementById('toDate').value);
+                return query(
+                    collection(db, "stress_predictions"),
+                    where("prediction_timestamp", ">=", Timestamp.fromDate(fromDate)),
+                    where("prediction_timestamp", "<=", Timestamp.fromDate(toDate))
+                );
+            } else {
+                return query(collection(db, "stress_predictions"));
+            }
+        }
+
+        window.previewDelete = async function() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<span class="info">Counting documents...</span>\n';
+            
+            try {
+                const q = getQuery();
+                const snapshot = await getDocs(q);
+                
+                output.innerHTML = `<span class="info">Found ${snapshot.size} documents to delete</span>\n\n`;
+                
+                if (snapshot.size > 0) {
+                    output.innerHTML += '<span class="info">Sample timestamps:</span>\n';
+                    snapshot.docs.slice(0, 5).forEach(doc => {
+                        const data = doc.data();
+                        const timestamp = data.prediction_timestamp?.toDate();
+                        output.innerHTML += `- ${timestamp?.toLocaleString() || 'No timestamp'}\n`;
+                    });
+                }
+            } catch (error) {
+                output.innerHTML += `<span class="error">Error: ${error.message}</span>\n`;
+            }
+        };
+
+        window.confirmDelete = async function() {
+            const option = document.getElementById('deleteOption').value;
+            
+            let confirmMessage = 'Are you sure you want to delete ';
+            if (option === 'recent') {
+                confirmMessage += 'data from the last 24 hours?';
+            } else if (option === 'all') {
+                confirmMessage += 'ALL stress prediction data?';
+            } else {
+                confirmMessage += 'data in the selected date range?';
+            }
+            
+            if (!confirm(confirmMessage)) {
+                return;
+            }
+            
+            const output = document.getElementById('output');
+            output.innerHTML = '<span class="info">Deleting documents...</span>\n';
+            
+            try {
+                const q = getQuery();
+                const snapshot = await getDocs(q);
+                
+                let deleted = 0;
+                const total = snapshot.size;
+                
+                for (const doc of snapshot.docs) {
+                    await deleteDoc(doc.ref);
+                    deleted++;
+                    
+                    if (deleted % 10 === 0) {
+                        output.innerHTML += `<span class="info">Deleted ${deleted}/${total}...</span>\n`;
+                    }
+                }
+                
+                output.innerHTML += `<span class="success">✓ Successfully deleted ${deleted} documents!</span>\n`;
+            } catch (error) {
+                output.innerHTML += `<span class="error">✗ Error: ${error.message}</span>\n`;
+            }
+        };
+    </script>
+</body>
+</html>

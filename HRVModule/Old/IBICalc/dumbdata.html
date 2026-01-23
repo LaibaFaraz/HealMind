@@ -1,0 +1,272 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Generate Dummy Stress Data</title>
+            <style>
+                body {
+                    font-family: system-ui, -apple-system, sans-serif;
+                    max-width: 800px;
+                    margin: 40px auto;
+                    padding: 20px;
+                    background: #0f172a;
+                    color: #e2e8f0;
+                }
+                .container {
+                    background: #1e293b;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+                }
+                h1 {
+                    color: #60a5fa;
+                    margin-bottom: 20px;
+                }
+                .controls {
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                    color: #94a3b8;
+                }
+                input, select {
+                    width: 100%;
+                    padding: 10px;
+                    background: #0f172a;
+                    border: 1px solid #334155;
+                    border-radius: 6px;
+                    color: #e2e8f0;
+                    margin-bottom: 15px;
+                }
+                button {
+                    background: #3b82f6;
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin-right: 10px;
+                }
+                button:hover {
+                    background: #2563eb;
+                }
+                button.secondary {
+                    background: #475569;
+                }
+                button.secondary:hover {
+                    background: #334155;
+                }
+                #output {
+                    background: #0f172a;
+                    padding: 20px;
+                    border-radius: 6px;
+                    margin-top: 20px;
+                    max-height: 400px;
+                    overflow-y: auto;
+                    font-family: 'Courier New', monospace;
+                    font-size: 13px;
+                    white-space: pre-wrap;
+                    word-break: break-all;
+                }
+                .success {
+                    color: #4ade80;
+                }
+                .info {
+                    color: #60a5fa;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Generate Dummy Stress Data for Firestore</h1>
+                
+                <div class="controls">
+                    <label>Number of Records:</label>
+                    <input type="number" id="numRecords" value="50" min="1" max="500">
+                    
+                    <label>Time Range:</label>
+                    <select id="timeRange">
+                        <option value="24">Last 24 hours</option>
+                        <option value="48">Last 48 hours</option>
+                        <option value="168">Last 7 days</option>
+                    </select>
+                    
+                    <label>Stress Pattern:</label>
+                    <select id="pattern">
+                        <option value="varied">Varied (Random)</option>
+                        <option value="increasing">Increasing Trend</option>
+                        <option value="decreasing">Decreasing Trend</option>
+                        <option value="spike">With Stress Spikes</option>
+                    </select>
+                </div>
+                
+                <button onclick="generateData()">Generate Data</button>
+                <button class="secondary" onclick="copyToClipboard()">Copy JSON</button>
+                <button class="secondary" onclick="downloadJSON()">Download JSON</button>
+                <button onclick="uploadToFirestore()" style="background: #10b981;">Upload to Firestore</button>
+                
+                <div id="output"></div>
+            </div>
+
+            <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+                import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+                const firebaseConfig = {
+                    apiKey: "AIzaSyALG5rqXdMdJLVY3Sm9An4pmCCoflYUn7g",
+                    authDomain: "healmind-2025.firebaseapp.com",
+                    projectId: "healmind-2025",
+                    storageBucket: "healmind-2025.firebasestorage.app",
+                    messagingSenderId: "815736974240",
+                    appId: "1:815736974240:web:46d83a46fae313961612c5",
+                    measurementId: "G-Q113X0VYS2"
+                };
+
+                const app = initializeApp(firebaseConfig);
+                const db = getFirestore(app);
+
+                let generatedData = [];
+
+                function getStressValues(pattern, index, total) {
+                    let high, moderate, low;
+                    
+                    switch(pattern) {
+                        case 'increasing':
+                            const progress = index / total;
+                            high = 0.1 + (progress * 0.7);
+                            low = 0.8 - (progress * 0.6);
+                            moderate = 1 - high - low;
+                            break;
+                            
+                        case 'decreasing':
+                            const regress = index / total;
+                            high = 0.8 - (regress * 0.6);
+                            low = 0.1 + (regress * 0.7);
+                            moderate = 1 - high - low;
+                            break;
+                            
+                        case 'spike':
+                            if (Math.random() > 0.8) {
+                                high = 0.6 + Math.random() * 0.3;
+                                low = 0.05 + Math.random() * 0.1;
+                            } else {
+                                high = Math.random() * 0.3;
+                                low = 0.4 + Math.random() * 0.4;
+                            }
+                            moderate = 1 - high - low;
+                            break;
+                            
+                        default: // varied
+                            high = Math.random();
+                            low = Math.random() * (1 - high);
+                            moderate = 1 - high - low;
+                    }
+                    
+                    return { high, moderate, low };
+                }
+
+                window.generateData = function() {
+                    const numRecords = parseInt(document.getElementById('numRecords').value);
+                    const timeRange = parseInt(document.getElementById('timeRange').value);
+                    const pattern = document.getElementById('pattern').value;
+                    
+                    generatedData = [];
+                    const now = new Date();
+                    const msPerRecord = (timeRange * 60 * 60 * 1000) / numRecords;
+                    
+                    for (let i = 0; i < numRecords; i++) {
+                        const timestamp = new Date(now.getTime() - ((numRecords - i) * msPerRecord));
+                        const { high, moderate, low } = getStressValues(pattern, i, numRecords);
+                        
+                        const stressLevel = high > 0.5 ? 2 : (high > 0.3 ? 1 : 0);
+                        const stressLabel = stressLevel === 2 ? "High" : (stressLevel === 1 ? "Moderate" : "Low");
+                        
+                        const sdnn = 50 + Math.random() * 100;
+                        const rmssd = 100 + Math.random() * 200;
+                        
+                        const windowStart = new Date(timestamp.getTime() - 5 * 60 * 1000);
+                        
+                        const record = {
+                            prediction_timestamp: timestamp,
+                            stress_probabilities: {
+                                high: parseFloat(high.toFixed(4)),
+                                moderate: parseFloat(moderate.toFixed(4)),
+                                low: parseFloat(low.toFixed(4))
+                            },
+                            stress_level: stressLevel,
+                            stress_label: stressLabel,
+                            sdnn: parseFloat(sdnn.toFixed(2)),
+                            rmssd: parseFloat(rmssd.toFixed(2)),
+                            num_samples: Math.floor(50 + Math.random() * 20),
+                            window_start: windowStart,
+                            window_end: timestamp
+                        };
+                        
+                        generatedData.push(record);
+                    }
+                    
+                    displayData();
+                };
+
+                function displayData() {
+                    const output = document.getElementById('output');
+                    output.innerHTML = `<span class="success">✓ Generated ${generatedData.length} records</span>\n\n`;
+                    output.innerHTML += `<span class="info">Sample records:</span>\n`;
+                    output.innerHTML += JSON.stringify(generatedData.slice(0, 3), null, 2);
+                    output.innerHTML += `\n\n<span class="info">... ${generatedData.length - 3} more records</span>`;
+                }
+
+                window.copyToClipboard = function() {
+                    const jsonStr = JSON.stringify(generatedData, null, 2);
+                    navigator.clipboard.writeText(jsonStr).then(() => {
+                        alert('JSON copied to clipboard!');
+                    });
+                };
+
+                window.downloadJSON = function() {
+                    const jsonStr = JSON.stringify(generatedData, null, 2);
+                    const blob = new Blob([jsonStr], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'stress_data.json';
+                    a.click();
+                };
+
+                window.uploadToFirestore = async function() {
+                    if (generatedData.length === 0) {
+                        alert('Generate data first!');
+                        return;
+                    }
+                    
+                    const output = document.getElementById('output');
+                    output.innerHTML += '\n\n<span class="info">Uploading to Firestore...</span>\n';
+                    
+                    try {
+                        for (let i = 0; i < generatedData.length; i++) {
+                            const record = { ...generatedData[i] };
+                            record.prediction_timestamp = Timestamp.fromDate(record.prediction_timestamp);
+                            record.window_start = Timestamp.fromDate(record.window_start);
+                            record.window_end = Timestamp.fromDate(record.window_end);
+                            
+                            await addDoc(collection(db, "stress_predictions"), record);
+                            
+                            if ((i + 1) % 10 === 0) {
+                                output.innerHTML += `<span class="info">Uploaded ${i + 1}/${generatedData.length}...</span>\n`;
+                            }
+                        }
+                        
+                        output.innerHTML += `<span class="success">✓ Successfully uploaded all ${generatedData.length} records!</span>\n`;
+                    } catch (error) {
+                        output.innerHTML += `<span style="color: #f87171;">✗ Error: ${error.message}</span>\n`;
+                    }
+                };
+
+                // Generate initial data
+                generateData();
+            </script>
+        </body>
+        </html>

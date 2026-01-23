@@ -1,0 +1,239 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.samsung.health.hrdatatransfer"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="30"
+9        android:targetSdkVersion="36" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:6:5-67
+11-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:6:22-64
+12
+13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+14    <!-- <uses-sdk android:minSdkVersion="21" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:10:5-79
+15-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:10:22-76
+16
+17    <permission
+17-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+18        android:name="com.samsung.health.hrdatatransfer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.samsung.health.hrdatatransfer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:8:5-44:19
+24        android:name="com.samsung.health.mobile.MobileApp"
+24-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:9:9-59
+25        android:allowBackup="true"
+25-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:10:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.16.0] C:\Users\laiba\.gradle\caches\8.13\transforms\a5a7cea8487db616d05b46f3c2dd85b8\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:fullBackupOnly="true"
+29-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:11:9-38
+30        android:icon="@drawable/ic_launcher"
+30-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:12:9-45
+31        android:label="@string/app_name"
+31-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:13:9-41
+32        android:testOnly="true" >
+33        <service
+33-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:14:9-30:19
+34            android:name="com.samsung.health.mobile.data.DataListenerService"
+34-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:15:13-78
+35            android:exported="true" >
+35-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:16:13-36
+36            <intent-filter>
+36-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:18:13-29:29
+37                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+37-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:19:17-87
+37-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:19:25-84
+38                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+38-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:20:17-91
+38-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:20:25-88
+39                <action android:name="com.google.android.gms.wearable.REQUEST_RECEIVED" />
+39-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:21:17-91
+39-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:21:25-88
+40                <action android:name="com.google.android.gms.wearable.CAPABILITY_CHANGED" />
+40-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:22:17-93
+40-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:22:25-90
+41                <action android:name="com.google.android.gms.wearable.CHANNEL_EVENT" />
+41-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:23:17-88
+41-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:23:25-85
+42
+43                <data
+43-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:25:17-28:45
+44                    android:host="*"
+44-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:26:21-37
+45                    android:pathPrefix="/msg"
+45-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:27:21-46
+46                    android:scheme="wear" />
+46-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:28:21-42
+47            </intent-filter>
+48        </service>
+49
+50        <activity
+50-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:31:9-43:20
+51            android:name="com.samsung.health.mobile.presentation.MainActivity"
+51-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:32:13-79
+52            android:configChanges="orientation|keyboardHidden"
+52-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:33:13-63
+53            android:exported="true"
+53-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:34:13-36
+54            android:launchMode="singleTask"
+54-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:35:13-44
+55            android:screenOrientation="portrait"
+55-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:36:13-49
+56            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+56-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:37:13-77
+57            <intent-filter>
+57-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:39:13-42:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:40:17-69
+58-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:40:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:41:17-77
+60-->D:\laiba\Desktop\USM\CAT304W Drafts\Working\HealMind_uploaded on git hubso any changes there also here\HRVModule\Mobile Client\mobile\src\main\AndroidManifest.xml:41:27-74
+61            </intent-filter>
+62        </activity>
+63
+64        <service
+64-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:14:9-23:19
+65            android:name="com.google.firebase.components.ComponentDiscoveryService"
+65-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:15:13-84
+66            android:directBootAware="true"
+66-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+67            android:exported="false" >
+67-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:16:13-37
+68            <meta-data
+68-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:17:13-19:85
+69                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+69-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:18:17-122
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:19:17-82
+71            <meta-data
+71-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:20:13-22:85
+72                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+72-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:21:17-111
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\laiba\.gradle\caches\8.13\transforms\d24cf70958df7d85b915c0dbadb11184\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:22:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\338f3e6c1235c2dab79f6c9b1ad0a334\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+75                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+75-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\338f3e6c1235c2dab79f6c9b1ad0a334\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\338f3e6c1235c2dab79f6c9b1ad0a334\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+77            <meta-data
+77-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+78                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+78-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+80        </service>
+81
+82        <activity
+82-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+83            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+83-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+84            android:exported="false"
+84-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+85            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+85-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\laiba\.gradle\caches\8.13\transforms\8df009ab229cecc6199755c491bd90ff\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+86
+87        <provider
+87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+88            android:name="androidx.startup.InitializationProvider"
+88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+89            android:authorities="com.samsung.health.hrdatatransfer.androidx-startup"
+89-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+90            android:exported="false" >
+90-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+91            <meta-data
+91-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+92-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+93                android:value="androidx.startup" />
+93-->[androidx.emoji2:emoji2:1.3.0] C:\Users\laiba\.gradle\caches\8.13\transforms\9935145fa382f976ab7e86e001a5cc76\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+94            <meta-data
+94-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\laiba\.gradle\caches\8.13\transforms\752d64e0d6a794f0c49f9253dcb935e1\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+95-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\laiba\.gradle\caches\8.13\transforms\752d64e0d6a794f0c49f9253dcb935e1\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:30:17-78
+96                android:value="androidx.startup" />
+96-->[androidx.lifecycle:lifecycle-process:2.8.3] C:\Users\laiba\.gradle\caches\8.13\transforms\752d64e0d6a794f0c49f9253dcb935e1\transformed\lifecycle-process-2.8.3\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+98-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+99                android:value="androidx.startup" />
+99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+100        </provider>
+101        <provider
+101-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+102            android:name="com.google.firebase.provider.FirebaseInitProvider"
+102-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+103            android:authorities="com.samsung.health.hrdatatransfer.firebaseinitprovider"
+103-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+104            android:directBootAware="true"
+104-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+105            android:exported="false"
+105-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+106            android:initOrder="100" />
+106-->[com.google.firebase:firebase-common:21.0.0] C:\Users\laiba\.gradle\caches\8.13\transforms\1f50ac4919d21c3427c3eee356e08ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+107
+108        <meta-data
+108-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\f16910d846687c282e938940b078f77e\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+109            android:name="com.google.android.gms.version"
+109-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\f16910d846687c282e938940b078f77e\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+110            android:value="@integer/google_play_services_version" />
+110-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\f16910d846687c282e938940b078f77e\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\laiba\.gradle\caches\8.13\transforms\94156c0458fc4abebcdd64447b9853f7\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131    </application>
+132
+133</manifest>
