@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMind | Mood Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="MainContainer">
+        <nav class="mb-8">
+            <a href="{{ url_for('home') }}" class="nav-link">← BACK TO HUB</a>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/4">
+                <div class="GlassPanel sticky top-8">
+                    <h2 class="text-pink-400 font-bold text-xl mb-6">Mood Entry</h2>
+                    <p class="text-slate-400 text-sm mb-2 uppercase font-bold">Selected Date</p>
+                    <p id="displayDate" class="text-white font-bold mb-6">Select a date to record your mood</p>
+                    
+                    <p class="text-slate-400 text-sm mb-3 uppercase font-bold">Feeling</p>
+                    <div id="emojiOptions" class="grid grid-cols-3 gap-2 mb-6"></div>
+
+                    <p class="text-slate-400 text-sm mb-2 uppercase font-bold">Stress Level: <span id="stressVal" class="text-pink-400">5</span></p>
+                    <input type="range" id="stressLevel" min="1" max="10" value="5" class="w-full mb-6 accent-pink-500">
+
+                    <p class="text-slate-400 text-sm mb-2 uppercase font-bold">Notes</p>
+                    <textarea id="dailyNote" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3 text-sm text-white mb-6 focus:outline-none focus:border-pink-500" rows="4" placeholder="How was your day?"></textarea>
+
+                    <button id="saveBtn" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-pink-500/20">Save Record</button>
+                </div>
+            </div>
+
+            <div class="lg:w-3/4">
+                <div class="GlassPanel">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 id="monthDisplay" class="text-2xl font-bold">Month Year</h2>
+                        <div class="flex gap-4">
+                            <button id="prevBtn" class="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition">←</button>
+                            <button id="todayBtn" class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition text-sm font-bold uppercase">Today</button>
+                            <button id="nextBtn" class="bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition">→</button>
+                        </div>
+                    </div>
+                    <div id="calendar" class="calendar-grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='auth-check.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='mood-script.js') }}"></script>
+</body>
+</html>

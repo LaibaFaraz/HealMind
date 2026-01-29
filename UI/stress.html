@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMind | Stress Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="MainContainer">
+        <nav class="top-nav">
+            <a href="{{ url_for('home') }}" class="nav-link">← BACK TO HUB</a>
+        </nav>
+
+        <!-- Crisis banner -->
+        <div class="GlassPanel crisis-alert">
+            <div class="crisis-content">
+                <div class="crisis-info">
+                    <span class="crisis-emoji">🆘</span>
+                    <div>
+                        <p class="crisis-title">In Crisis? Need Help?</p>
+                        <p class="crisis-phone">24/7 Support: Befrienders KL <a href="tel:+60379568145">03-7956 8145</a></p>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('crisisModal').classList.remove('hidden')" class="view-resources-btn">
+                    VIEW RESOURCES
+                </button>
+            </div>
+        </div>
+
+        <header class="page-header">
+            <h1 class="MainTitle TextGradient">STRESS INTELLIGENCE</h1>
+            <p class="SubTitleText">Real-time Bio-metric Analysis</p>
+        </header>
+
+        <div class="stats-boxes">
+            <div class="GlassPanel">
+                <p class="stat-label">Current Status</p>
+                <span id="status-label" class="big-status">Waiting...</span>
+                <p id="time-subtext" class="small-text">Initializing...</p>
+            </div>
+            <div class="GlassPanel">
+                <p class="stat-label">Stress Probability</p>
+                <div class="stat-flex">
+                    <span id="prob-value" class="big-number">0%</span>
+                    <span id="prob-status" class="small-badge">CALIBRATING</span>
+                </div>
+            </div>
+            <div class="GlassPanel">
+                <p class="stat-label">Peak Stress</p>
+                <span id="avg-value" class="big-number green-text">0%</span>
+                <p class="small-text">Highest today</p>
+            </div>
+        </div>
+
+        <div class="GlassPanel advice-box">
+            <h3 class="advice-heading">Advice</h3>
+            <p id="advice-text" class="advice-message">Collecting data...</p>
+        </div>
+
+        <div class="charts-section">
+            <div class="GlassPanel big-chart">
+                <h3 class="chart-title blue-title">24-Hour Stress Timeline</h3>
+                <div class="chart-box">
+                    <canvas id="historyChart"></canvas>
+                </div>
+            </div>
+            <div class="GlassPanel">
+                <h3 class="chart-title purple-title">Weekly Average Stress</h3>
+                <div class="chart-box">
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+            <div class="GlassPanel">
+                <h3 class="chart-title purple-title">Monthly Overview</h3>
+                <div class="chart-box">
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crisis popup -->
+    <div id="crisisModal" class="modal-overlay hidden">
+        <div class="GlassPanel modal-box">
+            <div class="modal-top">
+                <h2 class="modal-heading">🆘 Crisis Support</h2>
+                <button onclick="document.getElementById('crisisModal').classList.add('hidden')" class="close-btn">×</button>
+            </div>
+
+            <!-- Warning -->
+            <div class="warning-box">
+                <p class="warning-title">⚠️ Important</p>
+                <p class="warning-text">HealMind is for wellness only, not medical diagnosis. If in crisis, contact professionals immediately.</p>
+            </div>
+
+            <!-- Phone numbers -->
+            <div class="contacts-section">
+                <h3 class="contacts-heading">Malaysia Emergency Contacts</h3>
+                
+                <div class="contact-cards">
+                    <div class="contact-item red-border">
+                        <p class="contact-type">24/7 Emotional Support</p>
+                        <p class="contact-org">Befrienders KL</p>
+                        <a href="tel:+60379568145" class="contact-phone phone-red">03-7956 8145</a>
+                    </div>
+
+                    <div class="contact-item blue-border">
+                        <p class="contact-type">Women & Children Crisis</p>
+                        <p class="contact-org">Talian Kasih</p>
+                        <a href="tel:15999" class="contact-phone phone-blue">15999</a>
+                    </div>
+
+                    <div class="contact-item green-border">
+                        <p class="contact-type">Mental Health Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MOH Helpline</p>
+                        <a href="tel:+60323816899" class="contact-phone phone-green">03-2381 6899</a>
+                    </div>
+
+                    <div class="contact-item purple-border">
+                        <p class="contact-type">Mental Illness Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MIASA</p>
+                        <a href="tel:1800885522" class="contact-phone phone-purple">1800-88-5522</a>
+                    </div>
+
+                    <div class="contact-item pink-border">
+                        <p class="contact-type">Suicide Prevention (Daily 4PM-10PM)</p>
+                        <p class="contact-org">Life Line Malaysia</p>
+                        <a href="tel:+60379851000" class="contact-phone phone-pink">03-7985 1000</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency buttons -->
+            <div class="emergency-box">
+                <p class="emergency-title">More Resources</p>
+                <div class="emergency-btns">
+                    <a href="https://www.befrienders.org.my" target="_blank" class="emergency-link blue-btn">
+                        Online Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='auth-check.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='stress-script.js') }}"></script>
+</body>
+</html>

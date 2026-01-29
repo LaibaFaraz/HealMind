@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Migrate Data</title>
+</head>
+<body>
+    <h1>Firestore Data Migration</h1>
+    <button id="migrateBtn">Migrate All Data to Current User</button>
+    <div id="status"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { auth } from './auth.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyALG5rqXdMdJLVY3Sm9An4pmCCoflYUn7g",
+            authDomain: "healmind-2025.firebaseapp.com",
+            projectId: "healmind-2025",
+            storageBucket: "healmind-2025.firebasestorage.app",
+            messagingSenderId: "815736974240",
+            appId: "1:815736974240:web:46d83a46fae313961612c5",
+            measurementId: "G-Q113X0VYS2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById('migrateBtn').addEventListener('click', async () => {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in first!');
+                return;
+            }
+
+            const status = document.getElementById('status');
+            status.innerHTML = 'Migrating...';
+
+            try {
+                // Migrate mood_entries
+                const moodSnapshot = await getDocs(collection(db, "mood_entries"));
+                let count = 0;
+                for (const docSnap of moodSnapshot.docs) {
+                    await updateDoc(doc(db, "mood_entries", docSnap.id), {
+                        userId: user.uid,
+                        userEmail: user.email
+                    });
+                    count++;
+                }
+                status.innerHTML += `<br>✅ Updated ${count} mood entries`;
+
+                // Migrate stress_predictions
+                const stressSnapshot = await getDocs(collection(db, "stress_predictions"));
+                count = 0;
+                for (const docSnap of stressSnapshot.docs) {
+                    await updateDoc(doc(db, "stress_predictions", docSnap.id), {
+                        userId: user.uid,
+                        userEmail: user.email
+                    });
+                    count++;
+                }
+                status.innerHTML += `<br>✅ Updated ${count} stress predictions`;
+
+                // Migrate face_logs
+                const faceSnapshot = await getDocs(collection(db, "face_logs"));
+                count = 0;
+                for (const docSnap of faceSnapshot.docs) {
+                    await updateDoc(doc(db, "face_logs", docSnap.id), {
+                        userId: user.uid,
+                        userEmail: user.email
+                    });
+                    count++;
+                }
+                status.innerHTML += `<br>✅ Updated ${count} face logs`;
+
+                status.innerHTML += `<br><br>🎉 Migration complete!`;
+            } catch (error) {
+                status.innerHTML += `<br>❌ Error: ${error.message}`;
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>

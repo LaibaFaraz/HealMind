@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMind | Face Emotion & Stress Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="MainContainer">
+        <nav class="mb-8">
+            <a href="{{ url_for('home') }}" class="nav-link">← BACK TO HUB</a>
+        </nav>
+
+                <!-- Crisis banner -->
+        <div class="GlassPanel crisis-alert">
+            <div class="crisis-content">
+                <div class="crisis-info">
+                    <span class="crisis-emoji">🆘</span>
+                    <div>
+                        <p class="crisis-title">In Crisis? Need Help?</p>
+                        <p class="crisis-phone">24/7 Support: Befrienders KL <a href="tel:+60379568145">03-7956 8145</a></p>
+                    </div>
+                </div>
+                <button onclick="document.getElementById('crisisModal').classList.remove('hidden')" class="view-resources-btn">
+                    VIEW RESOURCES
+                </button>
+            </div>
+        </div>
+
+        <header class="text-center mb-10">
+            <h1 class="TextGradient text-4xl font-bold mb-4">FACE EMOTION & STRESS DETECTOR</h1>
+            <p class="text-slate-400 text-lg mb-6">Real-time insights from facial cues. Keep your face centered, and we will handle the rest.</p>
+            <div class="flex justify-center gap-3 flex-wrap">
+                <span class="px-4 py-2 bg-slate-800/50 rounded-full text-xs font-bold text-slate-300 border border-slate-700">Private</span>
+                <span class="px-4 py-2 bg-slate-800/50 rounded-full text-xs font-bold text-slate-300 border border-slate-700">On-device feed</span>
+                <span class="px-4 py-2 bg-slate-800/50 rounded-full text-xs font-bold text-slate-300 border border-slate-700">Instant results</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Camera Section -->
+            <section class="lg:col-span-2 GlassPanel">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase mb-1">Live Feed</p>
+                        <h2 class="text-2xl font-bold text-blue-400">Camera Preview</h2>
+                    </div>
+                    <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-bold flex items-center gap-2">
+                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        Live
+                    </span>
+                </div>
+
+                <div class="relative bg-black rounded-xl overflow-hidden mb-4" style="aspect-ratio: 16/9;">
+                    <video id="video" autoplay playsinline class="w-full h-full object-cover"></video>
+                    <canvas id="overlay" class="absolute top-0 left-0 w-full h-full"></canvas>
+                </div>
+
+                <div class="flex flex-wrap gap-3 text-xs text-slate-400">
+                    <span class="flex items-center gap-2">
+                        <span class="text-blue-400">💡</span>
+                        Soft lighting helps accuracy
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-blue-400">📷</span>
+                        Keep your face in frame
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="text-blue-400">⏱️</span>
+                        Hold steady for 2–3 seconds
+                    </span>
+                </div>
+            </section>
+
+            <!-- Status Section -->
+            <section class="GlassPanel">
+                <div class="mb-6">
+                    <p class="text-xs text-slate-400 font-bold uppercase mb-1">Current Status</p>
+                    <h2 class="text-2xl font-bold text-pink-400">Live Analysis</h2>
+                </div>
+
+                <div class="bg-slate-900/50 rounded-xl p-6 mb-6 min-h-[120px] flex items-center justify-center">
+                    <div id="loading" class="hidden">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-400"></div>
+                    </div>
+                    <div id="result-text" class="text-lg font-bold text-center">Waiting for camera...</div>
+                </div>
+
+                <div class="space-y-3 mb-6">
+                    <button id="mood-diary-btn" onclick="window.location.href='{{ url_for('mood') }}'" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-pink-500/20">
+                        Open Mood Diary
+                    </button>
+                    <button id="pause-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition border border-slate-700">
+                        Pause Scan
+                    </button>
+                </div>
+
+                <p class="text-xs text-slate-500 text-center">Results update every few moments. This tool does not store video.</p>
+            </section>
+        </div>
+    </div>
+        <!-- Crisis popup -->
+    <div id="crisisModal" class="modal-overlay hidden">
+        <div class="GlassPanel modal-box">
+            <div class="modal-top">
+                <h2 class="modal-heading">🆘 Crisis Support</h2>
+                <button onclick="document.getElementById('crisisModal').classList.add('hidden')" class="close-btn">×</button>
+            </div>
+
+            <!-- Warning -->
+            <div class="warning-box">
+                <p class="warning-title">⚠️ Important</p>
+                <p class="warning-text">HealMind is for wellness only, not medical diagnosis. If in crisis, contact professionals immediately.</p>
+            </div>
+
+            <!-- Phone numbers -->
+            <div class="contacts-section">
+                <h3 class="contacts-heading">Malaysia Emergency Contacts</h3>
+                
+                <div class="contact-cards">
+                    <div class="contact-item red-border">
+                        <p class="contact-type">24/7 Emotional Support</p>
+                        <p class="contact-org">Befrienders KL</p>
+                        <a href="tel:+60379568145" class="contact-phone phone-red">03-7956 8145</a>
+                    </div>
+
+                    <div class="contact-item blue-border">
+                        <p class="contact-type">Women & Children Crisis</p>
+                        <p class="contact-org">Talian Kasih</p>
+                        <a href="tel:15999" class="contact-phone phone-blue">15999</a>
+                    </div>
+
+                    <div class="contact-item green-border">
+                        <p class="contact-type">Mental Health Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MOH Helpline</p>
+                        <a href="tel:+60323816899" class="contact-phone phone-green">03-2381 6899</a>
+                    </div>
+
+                    <div class="contact-item purple-border">
+                        <p class="contact-type">Mental Illness Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MIASA</p>
+                        <a href="tel:1800885522" class="contact-phone phone-purple">1800-88-5522</a>
+                    </div>
+
+                    <div class="contact-item pink-border">
+                        <p class="contact-type">Suicide Prevention (Daily 4PM-10PM)</p>
+                        <p class="contact-org">Life Line Malaysia</p>
+                        <a href="tel:+60379851000" class="contact-phone phone-pink">03-7985 1000</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency buttons -->
+            <div class="emergency-box">
+                <p class="emergency-title">More Resources</p>
+                <div class="emergency-btns">
+                    <a href="https://www.befrienders.org.my" target="_blank" class="emergency-link blue-btn">
+                        Online Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='auth-check.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='camera.js') }}"></script>
+</body>
+</html>

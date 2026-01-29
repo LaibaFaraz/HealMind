@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMind | Intelligence Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <div class="MainContainer flex flex-col justify-center items-center min-h-screen">
+        <div class="MainContainer">
+    <nav style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 class="MainTitle TextGradient" style="margin: 0;">HEALMIND</h1>
+                <p class="SubTitleText text-xl">Your personal stress and mood tracking platform</p>
+
+        <button id="logout-btn" class="logout-btn">Logout</button>
+    </nav>
+
+        <header class="text-center mb-16">
+            <h1 class="TextGradient text-6xl font-black mb-4">HEALMIND</h1>
+            <p class="text-slate-400 text-xl tracking-widest uppercase">Intelligence Dashboard</p>
+        </header>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+            <a href="{{ url_for('stress') }}" class="GlassPanel group hover:border-blue-500/50 transition-all duration-500">
+                <div class="text-center">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">📊</div>
+                    <h2 class="text-2xl font-bold text-blue-400 mb-3">Stress Analysis</h2>
+                    <p class="text-slate-400">Real-time biometric stress prediction & AI history tracking.</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('mood') }}" class="GlassPanel group hover:border-pink-500/50 transition-all duration-500">
+                <div class="text-center">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">🌙</div>
+                    <h2 class="text-2xl font-bold text-pink-400 mb-3">Mood Calendar</h2>
+                    <p class="text-slate-400">Visualize your emotional journey and record daily insights.</p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('camera') }}" class="GlassPanel group hover:border-purple-500/50 transition-all duration-500">
+                <div class="text-center">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">📷</div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-3">Face Detection</h2>
+                    <p class="text-slate-400">Real-time emotion & stress detection from facial cues.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+        <!-- Crisis popup -->
+    <div id="crisisModal" class="modal-overlay hidden">
+        <div class="GlassPanel modal-box">
+            <div class="modal-top">
+                <h2 class="modal-heading">🆘 Crisis Support</h2>
+                <button onclick="document.getElementById('crisisModal').classList.add('hidden')" class="close-btn">×</button>
+            </div>
+
+            <!-- Warning -->
+            <div class="warning-box">
+                <p class="warning-title">⚠️ Important</p>
+                <p class="warning-text">HealMind is for wellness only, not medical diagnosis. If in crisis, contact professionals immediately.</p>
+            </div>
+
+            <!-- Phone numbers -->
+            <div class="contacts-section">
+                <h3 class="contacts-heading">Malaysia Emergency Contacts</h3>
+                
+                <div class="contact-cards">
+                    <div class="contact-item red-border">
+                        <p class="contact-type">24/7 Emotional Support</p>
+                        <p class="contact-org">Befrienders KL</p>
+                        <a href="tel:+60379568145" class="contact-phone phone-red">03-7956 8145</a>
+                    </div>
+
+                    <div class="contact-item blue-border">
+                        <p class="contact-type">Women & Children Crisis</p>
+                        <p class="contact-org">Talian Kasih</p>
+                        <a href="tel:15999" class="contact-phone phone-blue">15999</a>
+                    </div>
+
+                    <div class="contact-item green-border">
+                        <p class="contact-type">Mental Health Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MOH Helpline</p>
+                        <a href="tel:+60323816899" class="contact-phone phone-green">03-2381 6899</a>
+                    </div>
+
+                    <div class="contact-item purple-border">
+                        <p class="contact-type">Mental Illness Support (Mon-Fri 9AM-5PM)</p>
+                        <p class="contact-org">MIASA</p>
+                        <a href="tel:1800885522" class="contact-phone phone-purple">1800-88-5522</a>
+                    </div>
+
+                    <div class="contact-item pink-border">
+                        <p class="contact-type">Suicide Prevention (Daily 4PM-10PM)</p>
+                        <p class="contact-org">Life Line Malaysia</p>
+                        <a href="tel:+60379851000" class="contact-phone phone-pink">03-7985 1000</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency buttons -->
+            <div class="emergency-box">
+                <p class="emergency-title">In Immediate Danger?</p>
+                <div class="emergency-btns">
+                    <a href="tel:999" class="emergency-link red-btn">
+                        Emergency 999
+                    </a>
+                    <a href="https://www.befrienders.org.my" target="_blank" class="emergency-link blue-btn">
+                        Online Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Auth check - redirects if not logged in -->
+    <script type="module" src="{{ url_for('static', filename='auth-check.js') }}"></script>
+    
+    <!-- Logout functionality -->
+    <script type="module">
+        import { auth } from "{{ url_for('static', filename='auth.js') }}";
+        import { signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                window.location.href = '/login';
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+    </script>
+    <script type="module" src="{{ url_for('static', filename='auth-check.js') }}"></script>
+</body>
+</html>

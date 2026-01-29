@@ -1,0 +1,615 @@
+/* --- 全局样式 & 玻璃效果 --- */
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: 
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(270, 50%, 25%, 1) 0, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(300, 35%, 28%, 1) 0, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(230, 55%, 22%, 1) 0, transparent 50%);
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.MainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.TextGradient {
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.GlassPanel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.nav-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.nav-link:hover { color: white; }
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .MainContainer { padding: 1rem; }
+}
+
+/* --- 日历格子基础样式 --- */
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.calendar-day {
+    aspect-ratio: 1/1; background: rgba(255,255,255,0.03); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; position: relative;
+    cursor: pointer; transition: all 0.2s ease; border: 2px solid transparent;
+}
+
+/* 重点：选中状态的强提醒 */
+.calendar-day.active { 
+    border-color: #f472b6 !important; 
+    background: rgba(244, 114, 182, 0.2) !important;
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+    transform: scale(1.05); /* 点击后稍微放大一点点 */
+    z-index: 10;
+}
+
+/* 压力背景色 (只对过去/今天生效) */
+.stress-low { background: rgba(74, 222, 128, 0.2) !important; }
+.stress-mid { background: rgba(250, 204, 21, 0.2) !important; }
+.stress-high { background: rgba(248, 113, 113, 0.2) !important; }
+
+/* 未来 Note 的专属颜色：靛蓝色/紫色 */
+.future-note-cell { 
+    background: rgba(129, 140, 248, 0.3) !important; 
+    border-color: rgba(129, 140, 248, 0.6) !important; 
+}
+
+/* 禁用状态逻辑 */
+.u-disabled { 
+    opacity: 0.2 !important; 
+    pointer-events: none !important; 
+    cursor: not-allowed !important;
+}
+
+/* --- Stress Analysis Page Styles --- */
+
+/* Top navigation */
+.top-nav {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Crisis banner at top */
+.crisis-alert {
+    margin-bottom: 1.5rem;
+    border-color: rgba(239, 68, 68, 0.4);
+    background: linear-gradient(to right, rgba(127, 29, 29, 0.2), transparent);
+}
+
+.crisis-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.crisis-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.crisis-emoji {
+    font-size: 1.5rem;
+}
+
+.crisis-title {
+    color: #fca5a5;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.crisis-phone {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.crisis-phone a {
+    color: #f87171;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.crisis-phone a:hover {
+    text-decoration: underline;
+}
+
+.view-resources-btn {
+    padding: 0.5rem 1rem;
+    background-color: #dc2626;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    white-space: nowrap;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.view-resources-btn:hover {
+    background-color: #b91c1c;
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: 2.5rem;
+}
+
+.MainTitle {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.SubTitleText {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* Stats boxes grid */
+.stats-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .stats-boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.big-status {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.green-text { color: #4ade80; }
+.yellow-text { color: #facc15; }
+.red-text { color: #f87171; }
+
+.stat-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.big-number {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.small-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: bold;
+    background-color: #1e293b;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: bold;
+}
+
+.badge-green {
+    background-color: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+.badge-yellow {
+    background-color: rgba(250, 204, 21, 0.2);
+    color: #facc15;
+}
+
+.badge-red {
+    background-color: rgba(248, 113, 113, 0.2);
+    color: #f87171;
+}
+
+.small-text {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 1rem;
+}
+
+/* AI advice box */
+.advice-box {
+    margin-bottom: 2rem;
+}
+
+.advice-heading {
+    color: #60a5fa;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.advice-message {
+    font-size: 1.125rem;
+    color: #e2e8f0;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Charts section */
+.charts-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .charts-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .big-chart {
+        grid-column: span 2;
+    }
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.blue-title {
+    color: #60a5fa;
+}
+
+.purple-title {
+    color: #c084fc;
+}
+
+.chart-box {
+    height: 350px;
+}
+
+/* Modal popup */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 1rem;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-box {
+    max-width: 42rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.modal-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f87171;
+}
+
+.close-btn {
+    color: #94a3b8;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+/* Warning box */
+.warning-box {
+    background-color: rgba(127, 29, 29, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.warning-title {
+    color: #fca5a5;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.warning-text {
+    color: #cbd5e1;
+    font-size: 0.875rem;
+}
+
+/* Contact numbers section */
+.contacts-section {
+    margin-bottom: 1.5rem;
+}
+
+.contacts-heading {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    background-color: rgba(15, 23, 42, 0.5);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.contact-item.red-border { border-color: rgba(239, 68, 68, 0.2); }
+.contact-item.blue-border { border-color: rgba(59, 130, 246, 0.2); }
+.contact-item.green-border { border-color: rgba(34, 197, 94, 0.2); }
+.contact-item.purple-border { border-color: rgba(168, 85, 247, 0.2); }
+.contact-item.pink-border { border-color: rgba(236, 72, 153, 0.2); }
+
+.contact-type {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact-org {
+    color: white;
+    font-weight: bold;
+}
+
+.contact-phone {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.phone-red { color: #f87171; }
+.phone-blue { color: #60a5fa; }
+.phone-green { color: #4ade80; }
+.phone-purple { color: #c084fc; }
+.phone-pink { color: #f472b6; }
+
+/* Emergency section */
+.emergency-box {
+    background-color: rgba(113, 63, 18, 0.2);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.emergency-title {
+    color: #fde047;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-btns {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.emergency-link {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.red-btn {
+    background-color: #dc2626;
+}
+
+.red-btn:hover {
+    background-color: #b91c1c;
+}
+
+.blue-btn {
+    background-color: #2563eb;
+}
+
+.blue-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* --- Authentication Pages --- */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-box {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-subtitle {
+    margin-bottom: 2rem;
+}
+
+.auth-form {
+    margin-top: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-input::placeholder {
+    color: #64748b;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+}
+
+.auth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+.auth-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.error-box {
+    background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    color: #fca5a5;
+    font-size: 0.875rem;
+}
+
+.error-box.hidden {
+    display: none;
+}
+
+/* Logout button */
+.logout-btn {
+    padding: 0.5rem 1rem;
+    background-color: #dc2626;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #b91c1c;
+}
+
+.hrv-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.95);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-bottom: 5px;
+    pointer-events: none;
+    z-index: 10;
+}
